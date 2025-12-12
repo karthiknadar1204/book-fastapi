@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
+from typing import Optional
 
 app=FastAPI()
 
@@ -8,8 +9,8 @@ async def read_root():
     return {"message": "Hello, World!"}
 
 @app.get("/greet/{name}")
-async def greet_name(name:str)->dict:
-    return {"message":f"Hello, {name}!"}
+async def greet_name(name:Optional[str]="User",age:int=0)->dict:
+    return {"message":f"Hello, {name}! You are {age} years old."}
 
 def start():
     """Start the FastAPI server."""
