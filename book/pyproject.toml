@@ -1,0 +1,25 @@
+[project]
+name = "book-api"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "karthik nadar",email = "karthiknadar1204@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi (>=0.124.2,<0.125.0)",
+    "uvicorn (>=0.38.0,<0.39.0)"
+]
+
+
+[tool.poetry.scripts]
+dev= "book_api.main:start"
+
+
+[tool.poetry]
+packages = [{include = "book_api", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
